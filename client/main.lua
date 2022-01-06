@@ -71,7 +71,7 @@ function sellAnimal() -- Selling horse function
         local gold = animal.gold
         local rolPoints = animal.rolPoints
         local xp = animal.xp               
-        TriggerServerEvent("vorp_sellhorse:giveReward", givenItem, money, gold, rolPoints, xp) 
+        TriggerServerEvent("vorp_sellhorse:giveReward", money, gold, rolPoints, xp) 
         TriggerEvent("vorp:TipRight", Config.Language.AnimalSold, 4000) -- Sold notification
         DeletePed(horse)  
     else
@@ -119,7 +119,7 @@ end)
 
 -- DEV TOOLS -- 
 
-RegisterCommand("horse", function() -- prints what entity model current mout is
+RegisterCommand("horse", function() -- prints what entity model current mount is
     local horse = Citizen.InvokeNative(0xE7E11B8DCBED1058,PlayerPedId())
     local model = GetEntityModel(horse)
     print("model",model) 
