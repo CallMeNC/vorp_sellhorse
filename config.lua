@@ -4,7 +4,7 @@ Config.Language = {
     ["NoMount"] = "You aren't mounted on a horse",
     ["NotInTheTrainer"] = "I won't buy that animal",
     ["AnimalSold"] = "Thanks for the deal!",
-    ["notatrainer"] = "You Dont Have The Right Job",
+    notatrainer = "You Dont Have The Right Job",
 }
 
 Config.aiTrainerped = true -- spawn ai trainer ped set to false if you dont want an ai trainer ped to spawn 
@@ -12,14 +12,14 @@ Config.joblocked = false -- lock the trainer so only people with the job can acc
 
 
 Config.trainers = {
-    {["trainername"] = "Valentine Trainer",     ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-383.248, 785.823, 114.956),    ["heading"] = 93.60,    ["radius"] = 3.0},
-    {["trainername"] = "Strawberry Trainer",    ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-1831.299, -596.048, 153.619),  ["heading"] = 278.79,   ["radius"] = 3.0},
-    {["trainername"] = "Blackwater Trainer",    ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-867.119, -1356.823, 42.64),    ["heading"] = 357.51,   ["radius"] = 3.0},
-    {["trainername"] = "Annesburg Trainer",     ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(2970.335, 1428.104, 43.76),     ["heading"] = 216.37,   ["radius"] = 3.0},
-    {["trainername"] = "Rhodes Trainer",        ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(1209.906, -203.069, 100.477),   ["heading"] = 154.72,   ["radius"] = 3.0},
-    {["trainername"] = "Saint Denis Trainer",   ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(2505.631, -1462.162, 45.36),    ["heading"] = 71.65,    ["radius"] = 3.0},
-    {["trainername"] = "Tumbleweed Trainer",    ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-5533.256, -3047.150, -1.971),  ["heading"] = 55.75,    ["radius"] = 3.0},
-    {["trainername"] = "Armadillo Trainer",     ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-3698.975, -2570.925, -12.70),  ["heading"] = 264.08,   ["radius"] = 3.0}
+    {["trainername"] = "Valentine Trainer", ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-383.248, 785.823, 114.956),       ["heading"] = 93.60,             ["radius"] = 3.0},
+    {["trainername"] = "Strawberry Trainer", ["trainerjob"] = "trainer",    ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-1831.299, -596.048, 153.619),      ["heading"] = 278.79,           ["radius"] = 3.0},
+    {["trainername"] = "Blackwater Trainer", ["trainerjob"] = "trainer",    ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-867.119, -1356.823, 42.64),         ["heading"] = 357.51,           ["radius"] = 3.0},
+    {["trainername"] = "Annesburg Trainer", ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(2970.335, 1428.104, 43.76),      ["heading"] = 216.37,   ["radius"] = 3.0},
+    {["trainername"] = "Rhodes Trainer",   ["trainerjob"] = "trainer",      ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(1209.906, -203.069, 100.477),    ["heading"] = 154.72,   ["radius"] = 3.0},
+    {["trainername"] = "Saint Denis Trainer",   ["trainerjob"] = "trainer", ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(2505.631, -1462.162, 45.36),    ["heading"] = 71.65,   ["radius"] = 3.0},
+    {["trainername"] = "Tumbleweed Trainer", ["trainerjob"] = "trainer",    ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-5533.256, -3047.150, -1.971),  ["heading"] = 55.75,  ["radius"] = 3.0},
+    {["trainername"] = "Armadillo Trainer", ["trainerjob"] = "trainer",     ["pressToSell"] = "Press [~e~Space~q~] to sell",  ["blip"] = -1103135225,  ["npcmodel"] = "A_M_M_ValFarmer_01",  ["coords"] = vector3(-3698.975, -2570.925, -12.70),  ["heading"] = 264.08,   ["radius"] = 3.0}
 }
 
 
