@@ -1,11 +1,11 @@
-# Vorp_sellhorses
+# Vorp_sellhorse
 Sell horses in RedM
 
 # Installation
 
-- Extract zip / git clone into resource folder
+- Extract git clone into resource folder
 - Configure 'config.lua'
-- ensure 'Vorp_sellhorses'
+- ensure 'vorp_sellhorse'
 
 Enjoy!
 
