@@ -9,7 +9,7 @@ TriggerEvent("getCore",function(core)
 end)
 
 RegisterServerEvent("vorp_sellhorse:giveReward")
-AddEventHandler("vorp_sellhorse:giveReward", function(givenItem, money, gold, rolPoints, xp)
+AddEventHandler("vorp_sellhorse:giveReward", function(money, gold, rolPoints, xp)
     local _source = source
     local Character = VorpCore.getUser(_source).getUsedCharacter
     if money ~= 0 then 
