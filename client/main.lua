@@ -44,38 +44,51 @@ function startTrainer() -- Loading Trainer Function
     end
 end
 
-function drawTxt(text, x, y, fontscale, fontsize, r, g, b, alpha, textcentred, shadow) -- Text function
-    local str = CreateVarString(10, "LITERAL_STRING", text)
-    SetTextScale(fontscale, fontsize)
-    SetTextColor(r, g, b, alpha)
-    SetTextCentre(textcentred)
-    if shadow then 
-        SetTextDropshadow(1, 0, 0, 255)
-    end
-    SetTextFontForCurrentCommand(1)
-    DisplayText(str, x, y)
-end
+-- Updated 1/30: Can not longer sell players horses! Including AI!
 
--------------------------------------------------------
---                 WARNING                           --
--- Don't accidently sell PLAYERS horses. Can sell AI --
--------------------------------------------------------
+local tamestate = 0
+
+Citizen.CreateThread(function() -- captures event when you break horse in
+	while true do
+		Citizen.Wait(1) 
+		local size = GetNumberOfEvents(0) 
+		if size > 0 then 
+			for i = 0, size - 1 do
+				local eventAtIndex = GetEventAtIndex(0, i)
+                if eventAtIndex == GetHashKey("EVENT_HORSE_BROKEN") then
+                    tamestate = 1
+                end
+            end
+        end
+    end
+end)
 
 function sellAnimal() -- Selling horse function
+    print(tamestate)
     local horse = Citizen.InvokeNative(0xE7E11B8DCBED1058,PlayerPedId()) -- Gets mount
     local model = GetEntityModel(horse)
-    print("model",model)
-    if Config.Animals[model] ~= nil then -- Paying for animals
-        local animal = Config.Animals[model]
-        local money = animal.money
-        local gold = animal.gold
-        local rolPoints = animal.rolPoints
-        local xp = animal.xp               
-        TriggerServerEvent("vorp_sellhorse:giveReward", money, gold, rolPoints, xp) 
-        TriggerEvent("vorp:TipRight", Config.Language.AnimalSold, 4000) -- Sold notification
-        DeletePed(horse)  
+    if model ~= 0 then
+        print("model",model)
+        if tamestate > 0 then -- checks to see if you recently broke the horse in
+            if Config.Animals[model] ~= nil then -- Paying for animals
+                local animal = Config.Animals[model]
+                local money = animal.money
+                local gold = animal.gold
+                local rolPoints = animal.rolPoints
+                local xp = animal.xp               
+                TriggerServerEvent("vorp_sellhorse:giveReward", money, gold, rolPoints, xp) 
+                TriggerEvent("vorp:TipRight", Config.Language.AnimalSold, 4000) -- Sold notification
+                DeletePed(horse)
+                Wait(100) 
+                tamestate = 0
+            else
+                TriggerEvent("vorp:TipRight", Config.Language.NotInTheTrainer, 4000) -- Notification when horse is not recognized
+            end
+        else
+            TriggerEvent("vorp:TipRight", Config.Language.NotBroken, 4000) -- Notification when you didn't break the horse 
+        end
     else
-        TriggerEvent("vorp:TipRight", Config.Language.NoMount, 4000) -- Notification when you don't have an mount to sell           
+        TriggerEvent("vorp:TipRight", Config.Language.NoMount, 4000) -- Notification when you don't have a mount
     end
 end
 
