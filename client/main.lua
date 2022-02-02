@@ -44,6 +44,18 @@ function startTrainer() -- Loading Trainer Function
     end
 end
 
+function drawTxt(text, x, y, fontscale, fontsize, r, g, b, alpha, textcentred, shadow) -- Text function
+    local str = CreateVarString(10, "LITERAL_STRING", text)
+    SetTextScale(fontscale, fontsize)
+    SetTextColor(r, g, b, alpha)
+    SetTextCentre(textcentred)
+    if shadow then 
+        SetTextDropshadow(1, 0, 0, 255)
+    end
+    SetTextFontForCurrentCommand(1)
+    DisplayText(str, x, y)
+end
+
 -- Updated 1/30: Can not longer sell players horses! Including AI!
 
 local tamestate = 0
