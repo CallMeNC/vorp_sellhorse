@@ -125,7 +125,7 @@ Citizen.CreateThread(function()
                             sellAnimal()     
                             Citizen.Wait(200)
                         else
-                            TriggerEvent("vorp:TipRight", Config.Language.notatrainer.." : "..v.trainerjob, 4000) 
+                            TriggerEvent("vorp:TipRight", Config.Language.NotATrainer.." : "..v.trainerjob, 4000) 
                         end
                     else
                         sellAnimal()  
