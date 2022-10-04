@@ -2,6 +2,7 @@ Config = { }
 
 Config.Language = {
     ["NoMount"] = "You aren't mounted on a horse",
+    ["NotBroken"] = "This horse wasn't wild, don't make me call the law!",
     ["NotInTheTrainer"] = "I won't buy that animal",
     ["AnimalSold"] = "Thanks for the deal!",
     ["NotATrainer"] = "You Dont Have The Right Job"
